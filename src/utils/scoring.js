@@ -18,6 +18,14 @@ export function dimScore(dim, checked) {
   return { per, attained, partial, value: attained + partial * 0.999 };
 }
 
+export function blockingItems(dim, score, checked) {
+  const nl = score.attained;
+  if (nl >= dim.levels.length) return [];
+  return dim.levels[nl]
+    .map((it, ii) => ({ ...it, ii }))
+    .filter((it) => !checked[itemId(dim.id, nl, it.ii)]);
+}
+
 export function buildSummary(dimensions, levelNames, scores, checked) {
   return {
     tool: "Agentic Development Maturity Matrix",
