@@ -1,6 +1,5 @@
 import React from "react";
 import useMaturityState from "../hooks/useMaturityState";
-import { ProgressVariantProvider } from "../context/ProgressVariantContext";
 import Topbar from "../components/Topbar";
 import Hero from "../components/Hero";
 import ModelSection from "../components/ModelSection";
@@ -25,7 +24,7 @@ export default function IndexPage() {
   } = useMaturityState();
 
   return (
-    <ProgressVariantProvider>
+    <>
       <Topbar overall={overall} attainedMin={attainedMin} />
       <Hero />
       <ModelSection />
@@ -49,7 +48,7 @@ export default function IndexPage() {
       <PathwaySection dimensions={dimensions} levelNames={levelNames} scores={scores} checked={checked} />
       <SourcesSection />
       <Footer />
-    </ProgressVariantProvider>
+    </>
   );
 }
 

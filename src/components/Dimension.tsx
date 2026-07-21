@@ -1,9 +1,8 @@
 import React from "react";
 import CriterionItem from "./CriterionItem";
 import { itemId } from "../utils/scoring";
-import { PROGRESS_VARIANTS } from "./progress";
-import { useProgressVariant } from "../context/ProgressVariantContext";
 import type { Dimension as DimensionType, Citations, Checked, Score } from "../types/domain";
+import VerticalStepperRail from "./progress/VerticalStepperRail";
 
 interface DimensionProps {
   dim: DimensionType;
@@ -26,9 +25,6 @@ export default function Dimension({
   isOpen,
   onToggleOpen,
 }: DimensionProps) {
-  const { variant } = useProgressVariant();
-  const active = PROGRESS_VARIANTS.find((v) => v.key === variant) || PROGRESS_VARIANTS[0];
-  const RailComponent = active.Component;
   const total = dim.levels.flat().length;
   const done = dim.levels.reduce(
     (a, items, li) => a + items.filter((_, ii) => checked[itemId(dim.id, li, ii)]).length,
@@ -57,8 +53,8 @@ export default function Dimension({
           />
         </svg>
       </button>
-      <div className={`dim-body rail-${active.layout}`}>
-        <RailComponent dim={dim} levelNames={levelNames} score={score} checked={checked} />
+      <div className={`dim-body rail-sidebar`}>
+        <VerticalStepperRail dim={dim} levelNames={levelNames} score={score} checked={checked} />
         <div className="levels">
           {dim.levels.map((items, li) => (
             <div className="lvl" id={`${dim.id}-level-${li}`} key={li}>
