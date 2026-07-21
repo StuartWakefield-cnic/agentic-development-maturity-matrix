@@ -1,11 +1,6 @@
 import React from "react";
-import { blockingItems } from "../../utils/scoring";
-
-const MAX_CHIPS = 3;
 
 export default function VerticalStepperRail({ dim, levelNames, score, checked }) {
-  const blockers = score.attained < 4 ? blockingItems(dim, score, checked) : [];
-
   return (
     <div className="rail-vstepper dim-rail">
       <div className="vstepper-col">
@@ -43,19 +38,6 @@ export default function VerticalStepperRail({ dim, levelNames, score, checked })
           );
         })}
       </div>
-      {blockers.length > 0 && (
-        <div className="rail-blockers">
-          <span className="rail-blockers-label">Blocking L{score.attained + 1}:</span>
-          {blockers.slice(0, MAX_CHIPS).map((b, i) => (
-            <span className="blocker-chip" key={i} title={b.title}>
-              {b.title}
-            </span>
-          ))}
-          {blockers.length > MAX_CHIPS && (
-            <span className="blocker-chip blocker-chip-more">+{blockers.length - MAX_CHIPS} more</span>
-          )}
-        </div>
-      )}
       {score.attained === 4 && <div className="rail-complete">Elite — every gate complete</div>}
     </div>
   );

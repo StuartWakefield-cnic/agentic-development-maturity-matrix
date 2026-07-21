@@ -39,7 +39,7 @@ export default function Topbar({ overall, attainedMin }) {
   return (
     <div className="topbar">
       <Container className="topbar-in">
-        <a className="brand" href="#" aria-label="Team Internet">
+        <a className="brand" href={withPrefix("/")} aria-label="Team Internet">
           <img src={withPrefix("/images/team-internet-logo-white.svg")} alt="Team Internet" />
         </a>
         <nav aria-label="Sections">
