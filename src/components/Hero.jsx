@@ -1,10 +1,41 @@
 import React from "react";
+import Container from "./ui/Container";
+import Badge from "./ui/Badge";
+import Card from "./ui/Card";
+import Eyebrow from "./ui/Eyebrow";
+
+const GATES = [
+  {
+    num: "L1",
+    name: "Foundational",
+    desc: "Assistive AI on a working CD bedrock. Everything versioned; every AI change read and understood by a human.",
+    accent: "var(--line-strong)",
+  },
+  {
+    num: "L2",
+    name: "Developing",
+    desc: "Supervised agents with least-privilege access. Test-first agent work; prompts and agent config treated as code.",
+    accent: "var(--blue-tint2)",
+  },
+  {
+    num: "L3",
+    name: "Established",
+    desc: "Delegated agent sessions inside a deliberate harness. Specs anchor work; evals and SLOs govern pace.",
+    accent: "var(--blue-tint3)",
+  },
+  {
+    num: "L4",
+    name: "Elite",
+    desc: "Orchestrated multi-agent delivery. Pipeline-enforced contracts; humans own intent and accountability.",
+    accent: "var(--blue)",
+  },
+];
 
 export default function Hero() {
   return (
     <header className="hero">
-      <div className="wrap">
-        <div className="eyebrow">Self-assessment · Improvement pathway · ~30 min, ideal for a team retro</div>
+      <Container>
+        <Eyebrow variant="hero">Self-assessment · Improvement pathway · ~30 min, ideal for a team retro</Eyebrow>
         <h1>Agentic Development Maturity Matrix</h1>
         <p className="sub">
           A research-backed self-assessment for engineering teams adopting AI agents across the SDLC. Tick the
@@ -14,46 +45,23 @@ export default function Hero() {
           it magnifies dysfunction, so the pathway starts with the control system, not the agent.
         </p>
         <div className="badges">
-          <span className="badge">DORA 2025 · State of AI-assisted Software Development</span>
-          <span className="badge">DORA AI Capabilities Model</span>
-          <span className="badge">MinimumCD · Agentic CD</span>
-          <span className="badge">martinfowler.com · Harness engineering</span>
-          <span className="badge">METR RCT</span>
-          <span className="badge">OWASP GenAI · Google SRE</span>
+          <Badge>DORA 2025 · State of AI-assisted Software Development</Badge>
+          <Badge>DORA AI Capabilities Model</Badge>
+          <Badge>MinimumCD · Agentic CD</Badge>
+          <Badge>martinfowler.com · Harness engineering</Badge>
+          <Badge>METR RCT</Badge>
+          <Badge>OWASP GenAI · Google SRE</Badge>
         </div>
         <div className="hero-gates" aria-label="The four levels">
-          <div className="hero-gate g1">
-            <div className="gnum">L1</div>
-            <div className="gname">Foundational</div>
-            <div className="gdesc">
-              Assistive AI on a working CD bedrock. Everything versioned; every AI change read and understood by a
-              human.
-            </div>
-          </div>
-          <div className="hero-gate g2">
-            <div className="gnum">L2</div>
-            <div className="gname">Developing</div>
-            <div className="gdesc">
-              Supervised agents with least-privilege access. Test-first agent work; prompts and agent config treated
-              as code.
-            </div>
-          </div>
-          <div className="hero-gate g3">
-            <div className="gnum">L3</div>
-            <div className="gname">Established</div>
-            <div className="gdesc">
-              Delegated agent sessions inside a deliberate harness. Specs anchor work; evals and SLOs govern pace.
-            </div>
-          </div>
-          <div className="hero-gate g4">
-            <div className="gnum">L4</div>
-            <div className="gname">Elite</div>
-            <div className="gdesc">
-              Orchestrated multi-agent delivery. Pipeline-enforced contracts; humans own intent and accountability.
-            </div>
-          </div>
+          {GATES.map((g) => (
+            <Card key={g.num} accent={g.accent} className="hero-gate">
+              <div className="gnum">{g.num}</div>
+              <div className="gname">{g.name}</div>
+              <div className="gdesc">{g.desc}</div>
+            </Card>
+          ))}
         </div>
-      </div>
+      </Container>
     </header>
   );
 }

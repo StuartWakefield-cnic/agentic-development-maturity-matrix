@@ -26,26 +26,26 @@ export default function Radar({ dimensions, scores }) {
           key={ring}
           points={dimensions.map((_, i) => pt(i, ring).join(",")).join(" ")}
           fill="none"
-          stroke={ring === 4 ? "#C3CCC8" : "#DDE3E0"}
+          stroke={ring === 4 ? "#CCCFD4" : "#E5E7EA"}
           strokeWidth="1"
         />
       ))}
       {dimensions.map((d, i) => {
         const [x, y] = pt(i, 4);
-        return <line key={d.id} x1={cx} y1={cy} x2={x} y2={y} stroke="#DDE3E0" strokeWidth="1" />;
+        return <line key={d.id} x1={cx} y1={cy} x2={x} y2={y} stroke="#E5E7EA" strokeWidth="1" />;
       })}
-      <polygon points={partPts} fill="#8FBFB3" fillOpacity=".28" stroke="#8FBFB3" strokeWidth="1.5" />
+      <polygon points={partPts} fill="#5C93FF" fillOpacity=".25" stroke="#5C93FF" strokeWidth="1.5" />
       <polygon
         points={attPts}
-        fill="#0E5A4C"
-        fillOpacity=".38"
-        stroke="#0E5A4C"
+        fill="#035BFF"
+        fillOpacity=".35"
+        stroke="#035BFF"
         strokeWidth="2"
         strokeLinejoin="round"
       />
       {scores.map((sc, i) => {
         const [x, y] = pt(i, sc.attained);
-        return <circle key={i} cx={x} cy={y} r="3.5" fill="#0E5A4C" />;
+        return <circle key={i} cx={x} cy={y} r="3.5" fill="#035BFF" />;
       })}
       {dimensions.map((d, i) => {
         const [x, y] = pt(i, 4.75);
@@ -55,10 +55,10 @@ export default function Radar({ dimensions, scores }) {
             key={d.id}
             x={x}
             y={y + 4}
-            fontFamily="IBM Plex Mono,monospace"
+            fontFamily="Geologica,sans-serif"
             fontSize="11"
             fontWeight="600"
-            fill="#3D4A46"
+            fill="#333E53"
             textAnchor={anchor}
           >
             {d.glyph}

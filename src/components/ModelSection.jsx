@@ -1,24 +1,27 @@
 import React from "react";
+import Container from "./ui/Container";
+import SectionHeading from "./ui/SectionHeading";
+import Card from "./ui/Card";
 
 export default function ModelSection() {
   return (
     <section id="model">
-      <div className="wrap">
-        <div className="sec-eyebrow">The model</div>
-        <h2>Four levels, seven dimensions</h2>
-        <p className="lede">
-          The four levels — <strong>Foundational, Developing, Established, Elite</strong> — describe how far a team
-          can safely delegate work to AI agents while keeping speed <em>and</em> stability. They are deliberately
-          shaped like the DORA performance clusters: DORA's 2025 research (nearly 5,000 respondents, 100+ hours of
-          qualitative data) found AI adoption now improves delivery throughput but still increases delivery
-          instability, because teams are adapting for speed faster than their control systems are evolving. Moving
-          right on this matrix is the work of evolving that control system.
-        </p>
-        <p className="lede">
-          Levels are cumulative and gated, following Agentic CD's core rule: an agent-generated change must meet or
-          exceed the same quality bar as a human-generated change — the pipeline does not care who wrote the code.
-          You are only as mature as your weakest practice.
-        </p>
+      <Container>
+        <SectionHeading eyebrow="The model" title="Four levels, seven dimensions">
+          <p className="lede">
+            The four levels — <strong>Foundational, Developing, Established, Elite</strong> — describe how far a team
+            can safely delegate work to AI agents while keeping speed <em>and</em> stability. They are deliberately
+            shaped like the DORA performance clusters: DORA's 2025 research (nearly 5,000 respondents, 100+ hours of
+            qualitative data) found AI adoption now improves delivery throughput but still increases delivery
+            instability, because teams are adapting for speed faster than their control systems are evolving. Moving
+            right on this matrix is the work of evolving that control system.
+          </p>
+          <p className="lede">
+            Levels are cumulative and gated, following Agentic CD's core rule: an agent-generated change must meet or
+            exceed the same quality bar as a human-generated change — the pipeline does not care who wrote the code.
+            You are only as mature as your weakest practice.
+          </p>
+        </SectionHeading>
         <div className="tblwrap">
           <table className="model">
             <thead>
@@ -76,7 +79,7 @@ export default function ModelSection() {
           faster than the system it controls.
         </p>
         <div className="statrow">
-          <div className="stat">
+          <Card className="stat">
             <div className="n">90%</div>
             <p>
               of technology professionals now use AI at work (up 14% YoY) — adoption is table stakes; the
@@ -85,8 +88,8 @@ export default function ModelSection() {
                 DORA 2025
               </a>
             </p>
-          </div>
-          <div className="stat">
+          </Card>
+          <Card className="stat">
             <div className="n warn">30%</div>
             <p>
               report little or no trust in AI-generated code, even as 80%+ perceive productivity gains — "trust but
@@ -95,8 +98,8 @@ export default function ModelSection() {
                 DORA 2025
               </a>
             </p>
-          </div>
-          <div className="stat">
+          </Card>
+          <Card className="stat">
             <div className="n warn">−19%</div>
             <p>
               measured speed for experienced developers using early-2025 AI tools in a randomised trial — while they
@@ -109,8 +112,8 @@ export default function ModelSection() {
                 METR RCT
               </a>
             </p>
-          </div>
-          <div className="stat">
+          </Card>
+          <Card className="stat">
             <div className="n">7</div>
             <p>
               capabilities statistically amplify AI's benefits: clear AI stance, healthy data ecosystems,
@@ -120,9 +123,9 @@ export default function ModelSection() {
                 DORA AI Capabilities Model
               </a>
             </p>
-          </div>
+          </Card>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

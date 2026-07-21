@@ -1,16 +1,19 @@
 import React from "react";
+import Container from "./ui/Container";
+import SectionHeading from "./ui/SectionHeading";
+import Card from "./ui/Card";
 
 export default function SourcesSection() {
   return (
     <section id="sources" className="src">
-      <div className="wrap">
-        <div className="sec-eyebrow">Evidence base</div>
-        <h2>Sources &amp; method</h2>
-        <p className="lede">
-          Every criterion traces to published research or a primary practitioner source. The four-level,
-          dimension-by-level structure follows the DORA performance-cluster and ThoughtWorks/Forrester CD
-          maturity-model tradition; the agentic content draws on the sources below. Key sources:
-        </p>
+      <Container>
+        <SectionHeading eyebrow="Evidence base" title="Sources & method">
+          <p className="lede">
+            Every criterion traces to published research or a primary practitioner source. The four-level,
+            dimension-by-level structure follows the DORA performance-cluster and ThoughtWorks/Forrester CD
+            maturity-model tradition; the agentic content draws on the sources below. Key sources:
+          </p>
+        </SectionHeading>
         <ol>
           <li>
             <strong>DORA / Google Cloud</strong> —{" "}
@@ -184,15 +187,15 @@ export default function SourcesSection() {
             on review capacity as the binding constraint.
           </li>
         </ol>
-        <div className="caveat">
+        <Card className="caveat">
           <strong>Caveats.</strong> Assess one application/service at a time. Don't set levels as targets that invite
           gaming (Goodhart's law) — DORA explicitly warns against using benchmarks as goals. Don't compare teams with
           very different contexts or risk profiles: an Elite posture for an internal tool is not an Elite posture for
           a payments system. The agentic field moves fast; several sources here are 2025–2026 practitioner syntheses
           rather than decade-long research programmes, and criteria should be re-reviewed against new DORA and
           Technology Radar releases. Use your result to pick the next improvement, not to rank teams.
-        </div>
-      </div>
+        </Card>
+      </Container>
     </section>
   );
 }

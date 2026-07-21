@@ -1,6 +1,9 @@
 import React, { useState, useCallback } from "react";
 import Dimension from "./Dimension";
 import { buildMarkdownSummary } from "../utils/scoring";
+import Container from "./ui/Container";
+import SectionHeading from "./ui/SectionHeading";
+import Button from "./ui/Button";
 
 export default function AssessmentSection({
   dimensions,
@@ -56,23 +59,31 @@ export default function AssessmentSection({
 
   return (
     <section id="assess">
-      <div className="wrap">
-        <div className="sec-eyebrow">Self-assessment</div>
-        <h2>Where is your team today?</h2>
-        <p className="lede">
-          Work through each dimension as a team, assessing <strong>one application or service at a time</strong>.
-          Only tick a practice if you do it consistently — "sometimes" doesn't count. A level is attained when every
-          practice at that level <em>and all levels below it</em> is ticked. Hover the citation chips to see the
-          evidence behind each practice; click to open the source.
-        </p>
+      <Container>
+        <SectionHeading eyebrow="Self-assessment" title="Where is your team today?">
+          <p className="lede">
+            Work through each dimension as a team, assessing <strong>one application or service at a time</strong>.
+            Only tick a practice if you do it consistently — "sometimes" doesn't count. A level is attained when
+            every practice at that level <em>and all levels below it</em> is ticked. Hover the citation chips to see
+            the evidence behind each practice; click to open the source.
+          </p>
+        </SectionHeading>
         <div className="toolrow" role="toolbar" aria-label="Assessment actions">
-          <button onClick={handleResults}>See results ↓</button>
-          <button onClick={handleExport}>Export results (JSON)</button>
-          <button onClick={handleCopy}>{copied ? "Copied ✓" : "Copy summary (Markdown)"}</button>
-          <button onClick={() => window.print()}>Print / PDF</button>
-          <button className="danger" onClick={handleReset}>
+          <Button variant="ghost" onClick={handleResults}>
+            See results ↓
+          </Button>
+          <Button variant="ghost" onClick={handleExport}>
+            Export results (JSON)
+          </Button>
+          <Button variant="ghost" onClick={handleCopy}>
+            {copied ? "Copied ✓" : "Copy summary (Markdown)"}
+          </Button>
+          <Button variant="ghost" onClick={() => window.print()}>
+            Print / PDF
+          </Button>
+          <Button variant="danger" onClick={handleReset}>
             Reset
-          </button>
+          </Button>
         </div>
         <div id="dims">
           {dimensions.map((dim, i) => (
@@ -89,7 +100,7 @@ export default function AssessmentSection({
             />
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

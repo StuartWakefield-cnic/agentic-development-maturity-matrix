@@ -1,5 +1,9 @@
 import React from "react";
 import { itemId } from "../utils/scoring";
+import Container from "./ui/Container";
+import SectionHeading from "./ui/SectionHeading";
+import Card from "./ui/Card";
+import Badge from "./ui/Badge";
 
 export default function PathwaySection({ dimensions, levelNames, scores, checked }) {
   const ranked = dimensions
@@ -10,17 +14,17 @@ export default function PathwaySection({ dimensions, levelNames, scores, checked
 
   return (
     <section id="pathway">
-      <div className="wrap">
-        <div className="sec-eyebrow">Improvement pathway</div>
-        <h2>Your next steps</h2>
-        <p className="lede">
-          Don't try to fix everything. DORA's guidance — echoed by the MinimumCD migration playbook — is to gather
-          the whole team, find the most significant constraint, commit to one improvement, do the work, then
-          re-assess. The pathway below lists exactly what stands between you and the next gate in each dimension,
-          weakest first. Remember Agentic CD's sequencing: quality tools, clear requirements and hardened guardrails
-          come <em>before</em> accelerating with AI coding — adding agents to a broken system doesn't make it faster,
-          it makes the dysfunction louder.
-        </p>
+      <Container>
+        <SectionHeading eyebrow="Improvement pathway" title="Your next steps">
+          <p className="lede">
+            Don't try to fix everything. DORA's guidance — echoed by the MinimumCD migration playbook — is to gather
+            the whole team, find the most significant constraint, commit to one improvement, do the work, then
+            re-assess. The pathway below lists exactly what stands between you and the next gate in each dimension,
+            weakest first. Remember Agentic CD's sequencing: quality tools, clear requirements and hardened
+            guardrails come <em>before</em> accelerating with AI coding — adding agents to a broken system doesn't
+            make it faster, it makes the dysfunction louder.
+          </p>
+        </SectionHeading>
         <div id="path">
           {ranked.length === 0 ? (
             <div className="path-empty">
@@ -40,10 +44,15 @@ export default function PathwaySection({ dimensions, levelNames, scores, checked
                   .map((it, ii) => ({ it, ii }))
                   .filter((o) => !checked[itemId(x.d.id, nl, o.ii)]);
                 return (
-                  <div className={`path-card${i === 0 ? " first" : ""}`} key={x.d.id}>
+                  <Card
+                    key={x.d.id}
+                    accent={i === 0 ? "var(--danger)" : "var(--amber)"}
+                    className="path-card"
+                  >
                     <h3>
-                      <span className="tag">{i === 0 ? "Start here" : "Then"}</span> {x.d.glyph} · {x.d.name}{" "}
-                      <span style={{ fontFamily: "var(--mono)", fontSize: ".72rem", color: "var(--ink-faint)" }}>
+                      <Badge tone={i === 0 ? "danger" : "amber"}>{i === 0 ? "Start here" : "Then"}</Badge>{" "}
+                      {x.d.glyph} · {x.d.name}{" "}
+                      <span style={{ fontSize: ".72rem", fontWeight: 600, color: "var(--ink-faint)" }}>
                         L{nl}→L{nl + 1} ({levelNames[nl]})
                       </span>
                     </h3>
@@ -52,13 +61,13 @@ export default function PathwaySection({ dimensions, levelNames, scores, checked
                         <li key={m.ii}>{m.it.t}</li>
                       ))}
                     </ul>
-                  </div>
+                  </Card>
                 );
               })}
             </>
           )}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
