@@ -17,22 +17,13 @@ export default function VerticalStepperRail({ levelNames, score }: RailProps) {
               <div className={`vstep vstep-${state}`}>
                 <div
                   className="vstep-node"
-                  style={
-                    !isDone && frac > 0
-                      ? {
-                          background: `conic-gradient(${
-                            isCurrent ? "var(--amber)" : "var(--amber-soft)"
-                          } ${Math.round(frac * 360)}deg, var(--line-strong) 0deg)`,
-                        }
-                      : undefined
-                  }
+                  style={{ "--vstep-frac": `${frac * 360}deg` } as React.CSSProperties}
                 >
                   <span className="vstep-node-in">{isDone ? "✓" : `${p.done}/${p.total}`}</span>
                 </div>
                 <div className="vstep-lab">
                   <span className="vstep-lvl">L{l + 1}</span>
                   <span className="vstep-name">{levelNames[l]}</span>
-                  {state === "future" && <span className="vstep-count">{p.total} practices</span>}
                 </div>
               </div>
             </React.Fragment>
