@@ -55,7 +55,7 @@ export default function Hero() {
         <div className="hero-gates" aria-label="The four levels">
           {GATES.map((g) => (
             <Card key={g.num} accent={g.accent} className="hero-gate">
-              <div className="gnum">{g.num}</div>
+              <div className="gnum"><span className={`lvl-chip ${g.num.toLowerCase()}`}>{g.num}</span></div>
               <div className="gname">{g.name}</div>
               <div className="gdesc">{g.desc}</div>
             </Card>

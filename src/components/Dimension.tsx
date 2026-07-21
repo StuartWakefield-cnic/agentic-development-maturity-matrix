@@ -40,7 +40,7 @@ export default function Dimension({
           <small>{dim.small}</small>
         </span>
         <span className="dim-state">
-          L{score.attained} · {Math.round((done / total) * 100)}%
+          <span className={`lvl-chip l${score.attained}`}>L{score.attained}</span> · {Math.round((done / total) * 100)}%
         </span>
         <svg className="chev" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
           <path

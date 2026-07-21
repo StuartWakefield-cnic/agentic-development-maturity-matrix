@@ -61,7 +61,7 @@ export default function PathwaySection({ dimensions, levelNames, scores, checked
                       <Badge tone={i === 0 ? "danger" : "amber"}>{i === 0 ? "Start here" : "Then"}</Badge>{" "}
                       {x.d.glyph} · {x.d.name}{" "}
                       <span style={{ fontSize: ".72rem", fontWeight: 600, color: "var(--ink-faint)" }}>
-                        L{nl}→L{nl + 1} ({levelNames[nl]})
+                        <span className={`lvl-chip l${nl}`}>L{nl}</span>→<span className={`lvl-chip l${nl + 1}`}>L{nl + 1}</span> ({levelNames[nl]})
                       </span>
                     </h3>
                     <ul>

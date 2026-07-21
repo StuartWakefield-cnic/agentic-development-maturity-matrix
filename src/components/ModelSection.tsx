@@ -27,10 +27,10 @@ export default function ModelSection() {
             <thead>
               <tr>
                 <th>Characteristic</th>
-                <th>L1 · Foundational</th>
-                <th>L2 · Developing</th>
-                <th>L3 · Established</th>
-                <th>L4 · Elite</th>
+                <th><span className="lvl-chip l1">L1</span> · Foundational</th>
+                <th><span className="lvl-chip l2">L2</span> · Developing</th>
+                <th><span className="lvl-chip l3">L3</span> · Established</th>
+                <th><span className="lvl-chip l4">L4</span> · Elite</th>
               </tr>
             </thead>
             <tbody>

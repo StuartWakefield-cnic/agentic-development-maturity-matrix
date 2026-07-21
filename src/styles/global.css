@@ -94,7 +94,7 @@ button{font-family:inherit;cursor:pointer}
 .hero .sub{margin-top:18px;max-width:62ch;font-size:1.06rem;color:var(--ink-soft)}
 .hero .sub strong{color:var(--ink)}
 .badges{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
-.hero-gates{margin-top:34px;display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+.hero-gates{margin-top:34px;display:flex;gap:10px;flex-wrap:wrap}
 .hero-gate{flex:1 1 150px;min-width:150px}
 .hero-gate .gnum{font-family:var(--sans);font-weight:600;font-size:.7rem;color:var(--ink-faint)}
 .hero-gate .gname{font-family:var(--disp);font-weight:600;font-size:1rem;margin:2px 0 4px}
@@ -140,6 +140,7 @@ table.model td{color:var(--ink-soft)}
 .lvl{margin-top:16px}
 .lvl-h{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
 .lvl-chip{font-family:var(--sans);font-size:.7rem;font-weight:700;border-radius:5px;padding:2px 8px}
+.lvl-chip.l0{background:#EEF1F4;color:var(--ink-mute)}
 .lvl-chip.l1{background:#EEF1F4;color:var(--ink-soft)}
 .lvl-chip.l2{background:var(--blue-soft);color:var(--blue)}
 .lvl-chip.l3{background:#D6E4FF;color:var(--blue-dark)}

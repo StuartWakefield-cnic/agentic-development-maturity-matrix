@@ -14,7 +14,7 @@ export default function MatrixTable({ dimensions, levelNames, scores }: MatrixTa
         <tr>
           <th>Dimension</th>
           {levelNames.map((_, i) => (
-            <th key={i}>L{i + 1}</th>
+            <th key={i}><span className={`lvl-chip l${i + 1}`}>L{i + 1}</span></th>
           ))}
         </tr>
       </thead>
