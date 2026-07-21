@@ -12,4 +12,4 @@ export const PROGRESS_VARIANTS = [
   { key: "meter", label: "Meter", Component: MeterRail, layout: "stacked" },
 ];
 
-export const DEFAULT_VARIANT = "stepper";
+export const DEFAULT_VARIANT = "vertical-stepper";
