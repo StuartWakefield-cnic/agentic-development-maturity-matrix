@@ -1,0 +1,350 @@
+- id: found
+  glyph: D1
+  name: Delivery foundations & deployment
+  small: The CD bedrock agents stand on — pipeline, trunk, artifacts, release
+  levels:
+    - - t: All production code, infrastructure, pipeline definitions and application configuration are in version control.
+        c:
+          - mincd
+          - doracat
+      - t: Agent-facing assets — context files, rules, prompts, skills and agent configuration — are versioned in the repository alongside the code they govern.
+        c:
+          - acd
+          - claude
+      - t: A single command builds and tests the service locally and in CI; an agent (or new joiner) could run it unaided.
+        c:
+          - acdrepo
+      - t: An automated deployment pipeline exists and is the default route to every environment.
+        c:
+          - mincd
+    - - t: Work integrates to trunk at least daily; branches live less than a day.
+        c:
+          - tbd
+          - doracap
+      - t: 'The pipeline determines releasability: its verdict is final for human- and agent-authored changes alike.'
+        c:
+          - mincd
+          - acd
+      - t: Artifacts are immutable — built once, promoted through environments unchanged.
+        c:
+          - mincd
+      - t: Rollback or roll-forward is automated and has been exercised recently, not just documented.
+        c:
+          - mincd
+          - doracat
+    - - t: 'There is a single path to production: no side doors, manual hotfix routes or agent-specific shortcuts.'
+        c:
+          - acd
+          - mincd
+      - t: The pipeline is deterministic — same inputs, same outputs; flaky steps are treated as defects and fixed.
+        c:
+          - acd
+      - t: Feature flags decouple deploy from release, so incomplete work ships dark and batch size stays small.
+        c:
+          - doracat
+      - t: The team deploys on demand, at least daily, in small batches.
+        c:
+          - dorametrics
+          - doracap
+    - - t: Progressive delivery (canary or blue-green) with automated rollback on health regression is the standard release mode.
+        c:
+          - doracat
+          - sre
+      - t: Pipeline feedback stays under ~15 minutes even as agent-accelerated change volume grows — the control loop runs faster than the system it controls.
+        c:
+          - dora25
+      - t: While the pipeline is red, all feature work stops and agents may only generate changes that restore pipeline health.
+        c:
+          - acd
+          - mincd
+- id: product
+  glyph: D2
+  name: Product approach & specification
+  small: Intent, user-centricity and the specs that anchor agent work
+  levels:
+    - - t: Every change starts from explicit, human-owned intent — a problem statement or hypothesis exists before any agent touches code.
+        c:
+          - acd
+          - acdcontract
+      - t: The team can name the user and the user need for the work in flight; AI effort is pointed at real problems, not demos.
+        c:
+          - doracap
+          - dora25
+      - t: A shared definition of done includes tests and updated documentation, and applies equally to agent-generated work.
+        c:
+          - acd
+    - - t: Features are decomposed into increments deliverable in two days or less before implementation begins.
+        c:
+          - acd
+          - doracap
+      - t: Acceptance criteria are written and agreed before implementation — by human or agent.
+        c:
+          - acdcontract
+      - t: 'Agents are used to critique and sharpen specifications: human drafts, agent finds ambiguity and edge cases, human decides.'
+        c:
+          - acdspec
+    - - t: Intended behaviour is captured independently of implementation (e.g. BDD scenarios or executable specs) and versioned with the change.
+        c:
+          - acd
+          - acdcontract
+      - t: Changes are framed as hypotheses with expected outcomes, and the team checks whether shipped work achieved its purpose.
+        c:
+          - doracap
+          - acdcontract
+      - t: User feedback loops (research, analytics, fast beta cohorts) run at the same cadence as delivery — user-centric focus is a measured practice, not a value statement.
+        c:
+          - doracap
+          - dora25
+    - - t: The full agent delivery contract — intent, behaviour, constraints and acceptance criteria — exists as first-class versioned artifacts, and agents may not redefine any artifact's authority.
+        c:
+          - acdcontract
+      - t: 'Specs anchor development with fast feedback: the team works spec-anchored rather than spec-as-source, and specs are updated as implementation teaches.'
+        c:
+          - genai
+      - t: Value stream mapping connects AI-accelerated output to product and organisational outcomes, so local productivity doesn't become downstream chaos.
+        c:
+          - dora25
+- id: test
+  glyph: D3
+  name: Testing & code quality
+  small: Tests as sensors; review that scales without rubber-stamping
+  levels:
+    - - t: Automated tests run in CI on every change, and the suite must pass before merge.
+        c:
+          - mincd
+          - doracat
+      - t: No AI-generated change merges without a human reading and understanding it — rubber-stamping agent output is treated as a named anti-pattern.
+        c:
+          - acd
+          - devskills
+      - t: 'The test portfolio follows pyramid intent: mostly fast, isolated unit tests; few slow end-to-end tests.'
+        c:
+          - pyramid
+    - - t: 'Agent work is test-first: tests are generated from acceptance criteria before implementation, and a human reviews the tests.'
+        c:
+          - acd
+          - acdspec
+      - t: Static analysis, linting and formatting run in the pipeline as computational sensors — enforced, not advisory.
+        c:
+          - harness
+      - t: Coverage is tracked as a signal but never mandated as a target — agents optimising for a coverage number is a known failure mode.
+        c:
+          - acd
+    - - t: 'The suite is trusted as a regression sensor: flaky tests are quarantined and fixed within days, and a green build genuinely means releasable.'
+        c:
+          - acd
+          - mincd
+      - t: Contract tests protect service boundaries, so agent-driven changes can't silently break consumers.
+        c:
+          - acd
+          - pyramid
+      - t: Test effectiveness is verified — mutation testing or equivalent confirms the tests would actually catch defects, not just execute lines.
+        c:
+          - genai
+          - harness
+    - - t: Expert validation agents (AI reviewers for security, architecture, conventions) run in the pipeline, supplementing — and progressively replacing — interim human review.
+        c:
+          - acdenf
+      - t: Consistency between intent, tests and implementation is checked automatically on every change.
+        c:
+          - acd
+          - acdcontract
+      - t: 'Review capacity scales with generation capacity: the team measures review depth and queue time, and change volume never outruns meaningful review.'
+        c:
+          - review
+          - dora25
+- id: guard
+  glyph: D4
+  name: Guardrails & security
+  small: Least privilege, sandboxes, injection defence and separation of duties
+  levels:
+    - - t: A written, communicated AI usage policy says which tools may be used, on which code and data, under what conditions — and it's revisited as tools change.
+        c:
+          - doracap
+          - dora25
+      - t: Secrets and credentials never enter prompts, context files or agent-readable config; secret scanning runs in the pipeline.
+        c:
+          - owasp
+      - t: Agents act under named, attributable identities — never shared personal credentials.
+        c:
+          - owasp
+          - acd
+    - - t: Agents run with least-privilege, allowlisted tool access; risky actions require explicit human approval.
+        c:
+          - claude
+          - owasp
+      - t: Agent command execution is sandboxed — isolated from production credentials and the developer's broader environment.
+        c:
+          - claude
+      - t: Dependency (SCA) and static security (SAST) scanning gate the pipeline for all changes, human- or agent-authored.
+        c:
+          - doracat
+          - acdroad
+    - - t: 'The lethal trifecta is actively managed: no agent combines private-data access, untrusted content and external communication without gating at least one leg.'
+        c:
+          - trifecta
+          - owasp
+      - t: Prompt-injection risk is assessed for every agent that reads untrusted input (web pages, tickets, third-party docs), with mitigations recorded.
+        c:
+          - owasp
+      - t: Security context files and secure-by-default templates steer agent output toward safe configurations from the start.
+        c:
+          - genai
+          - claude
+    - - t: Agents implementing changes cannot promote those changes to production — separation of duties is enforced in the pipeline, not by convention.
+        c:
+          - acd
+      - t: Every tool, permission and data scope an agent holds is justified, reviewed on a cadence, and revoked when unneeded — excessive agency is audited like access control.
+        c:
+          - owasp
+      - t: Agent workflows are adversarially tested (red-teaming, injection payloads) on a regular cadence, and findings feed the harness.
+        c:
+          - owasp
+          - harness
+- id: evals
+  glyph: D5
+  name: Evals & measurement
+  small: Evidence over vibes — evals, DORA metrics and cost control
+  levels:
+    - - t: The team baselines the five DORA metrics — deployment frequency, lead time, change failure rate, recovery time and rework rate — before and while scaling AI use.
+        c:
+          - dorametrics
+          - dora25
+      - t: 'AI usage is visible: the team knows which tools are used, by whom, for what kinds of task.'
+        c:
+          - dora25
+          - so25
+    - - t: 'Prompts, agent configuration, skills and context files are treated as code: versioned, reviewed and changed deliberately.'
+        c:
+          - acdeval
+          - claude
+      - t: When models, tools or key prompts change, the team runs at least a lightweight before/after check on representative tasks rather than switching on vibes.
+        c:
+          - acdeval
+          - metr
+      - t: Token and subscription spend is visible per team and trending is reviewed — unbounded consumption is a named risk.
+        c:
+          - acdtok
+          - owasp
+    - - t: A golden-task eval suite drawn from the team's real work runs whenever the model, harness or key configuration changes, with agreed pass criteria.
+        c:
+          - acdeval
+      - t: AI impact is judged on measured outcomes — cycle time, change failure rate, rework — not self-reported speed; the team knows perception and reality can diverge by 30+ points.
+        c:
+          - metr
+          - dorametrics
+      - t: Rework rate and defect escape trends are watched specifically for AI-accelerated instability.
+        c:
+          - dora25
+          - acdmet
+    - - t: Eval suites are shared at platform level, and regression evals gate harness and agent changes exactly as tests gate code.
+        c:
+          - acdeval
+          - acdenf
+      - t: AI investment is tied to product and organisational outcomes through the value stream, not to output volume or acceptance rates.
+        c:
+          - dora25
+      - t: Eval results, incident findings and review data feed a continuous improvement loop for the harness itself.
+        c:
+          - harness
+          - acdmet
+- id: obs
+  glyph: D6
+  name: Observability & reliability
+  small: Seeing what agents did, and keeping production honest
+  levels:
+    - - t: Production telemetry (logs, metrics, traces) exists for the service, with health checks and alerting.
+        c:
+          - sre
+          - doracat
+      - t: 'Every production change is traceable: what changed, when, why, and whether a human or an agent authored it.'
+        c:
+          - acd
+          - mincd
+      - t: There is a documented, practised incident response process.
+        c:
+          - sre
+    - - t: 'Agent sessions are auditable: prompts, tool calls and resulting diffs can be reconstructed after the fact.'
+        c:
+          - acd
+          - owasp
+      - t: SLIs are defined and the four golden signals — latency, traffic, errors, saturation — are monitored.
+        c:
+          - sre
+      - t: Alerts are actionable and owned; alert fatigue is treated as a defect in the monitoring system.
+        c:
+          - sre
+    - - t: SLOs with error budgets govern pace of change — including agent-driven change — and the budget policy is actually enforced.
+        c:
+          - sre
+          - srebudget
+      - t: Blameless post-incident reviews examine the whole sociotechnical system, and lessons update guardrails, harness and evals.
+        c:
+          - sre
+          - accelerate
+          - harness
+      - t: Most production problems are detected by telemetry before customers report them; recovery typically takes less than a day.
+        c:
+          - dorametrics
+          - sre
+    - - t: Provenance metadata follows agent-generated change end-to-end — commit to deploy to runtime — so 'which agent, which session, which spec' is answerable in minutes.
+        c:
+          - acd
+          - owasp
+      - t: Progressive rollouts halt and roll back automatically on SLO regression, closing the loop between reliability data and release.
+        c:
+          - sre
+          - doracat
+      - t: 'Agents use observability too: they read test output, logs and telemetry to verify their own changes before handing over.'
+        c:
+          - harness
+          - claude
+- id: platform
+  glyph: D7
+  name: Platform, people & governance
+  small: The paved road, the skills and the culture that make agents safe at scale
+  levels:
+    - - t: Leadership's AI stance is clear and communicated — ambiguity about what's allowed is treated as a risk, because clarity creates the psychological safety to experiment.
+        c:
+          - doracap
+      - t: Developers are supported to build verification and steering skills — reviewing, correcting and directing agents — not just prompting.
+        c:
+          - devskills
+          - so25
+      - t: People can raise AI-caused failures and near-misses without blame; incidents involving agents are learning material, not career risk.
+        c:
+          - accelerate
+          - doracap
+    - - t: A quality internal platform offers a paved road for agent tooling — approved tools, standard pipelines, self-service environments.
+        c:
+          - doracap
+          - dora25
+      - t: Internal documentation, ADRs and domain knowledge are made AI-accessible, so agents work from your context rather than the internet's.
+        c:
+          - doracap
+      - t: Shared context files and working agreements set consistent expectations for agent behaviour across the team.
+        c:
+          - claude
+          - acd
+    - - t: 'Harness engineering is a deliberate practice: guides and sensors are curated, owned and improved, not accumulated by accident.'
+        c:
+          - harness
+      - t: The team's data ecosystem is healthy — quality, access and unification are actively worked on, because data quality caps AI value.
+        c:
+          - doracap
+      - t: Time for harness, eval and guardrail improvement is budgeted in normal delivery, and a community of practice shares prompts, skills and lessons across teams.
+        c:
+          - doracap
+          - acdroad
+    - - t: Harness templates, expert agents and eval suites are shared organisation-wide with a feedback loop from consuming teams.
+        c:
+          - harness
+          - acdeval
+      - t: There is a governed inventory of agents in use — each with an owner, purpose, permission scope and cost budget.
+        c:
+          - owasp
+          - acd
+      - t: The team periodically re-assesses its constraint profile (this matrix or DORA's team profiles) and commits to one improvement at a time.
+        c:
+          - dora25
+          - doracat

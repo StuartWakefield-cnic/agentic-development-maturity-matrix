@@ -1,0 +1,18 @@
+{
+  "name": "agentic-development-maturity-matrix",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A research-backed self-assessment and improvement pathway for engineering teams adopting agentic (AI-assisted) software development.",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build --prefix-paths",
+    "serve": "gatsby serve --prefix-paths",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^5.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
