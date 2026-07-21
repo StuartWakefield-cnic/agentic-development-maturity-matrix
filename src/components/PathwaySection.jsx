@@ -58,7 +58,7 @@ export default function PathwaySection({ dimensions, levelNames, scores, checked
                     </h3>
                     <ul>
                       {missing.map((m) => (
-                        <li key={m.ii}>{m.it.t}</li>
+                        <li key={m.ii}>{m.it.title}</li>
                       ))}
                     </ul>
                   </Card>

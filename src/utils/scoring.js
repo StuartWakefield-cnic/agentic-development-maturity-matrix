@@ -32,7 +32,7 @@ export function buildSummary(dimensions, levelNames, scores, checked) {
         name: levelNames[li],
         ticked: p.done,
         total: p.total,
-        items: d.levels[li].map((it, ii) => ({ text: it.t, done: !!checked[itemId(d.id, li, ii)] })),
+        items: d.levels[li].map((it, ii) => ({ text: it.title, done: !!checked[itemId(d.id, li, ii)] })),
       })),
     })),
   };

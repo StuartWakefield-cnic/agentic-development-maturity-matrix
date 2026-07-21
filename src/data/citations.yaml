@@ -1,116 +1,116 @@
 dora25:
-  s: DORA 2025
-  u: https://dora.dev/research/2025/
-  'n': 'State of AI-assisted Software Development (n≈5,000): AI is an amplifier — it improves throughput but increases instability where the surrounding system is weak.'
+  source: DORA 2025
+  href: https://dora.dev/research/2025/
+  note: 'State of AI-assisted Software Development (n≈5,000): AI is an amplifier — it improves throughput but increases instability where the surrounding system is weak.'
 doracap:
-  s: DORA AI-CM
-  u: https://dora.dev/research/2025/ai-capabilities-model/
-  'n': 'DORA AI Capabilities Model: seven capabilities with a statistically significant amplifying interaction with AI use.'
+  source: DORA AI-CM
+  href: https://dora.dev/research/2025/ai-capabilities-model/
+  note: 'DORA AI Capabilities Model: seven capabilities with a statistically significant amplifying interaction with AI use.'
 dorametrics:
-  s: DORA metrics
-  u: https://dora.dev/guides/dora-metrics/
-  'n': 'DORA''s five software delivery metrics: deployment frequency, lead time, change failure rate, failed-deployment recovery time, and (from 2025) rework rate.'
+  source: DORA metrics
+  href: https://dora.dev/guides/dora-metrics/
+  note: 'DORA''s five software delivery metrics: deployment frequency, lead time, change failure rate, failed-deployment recovery time, and (from 2025) rework rate.'
 doracat:
-  s: DORA cap.
-  u: https://dora.dev/capabilities/
-  'n': 'DORA capability catalog: trunk-based development, CI, test automation, deployment automation, monitoring & observability, small batches, generative culture and more.'
+  source: DORA cap.
+  href: https://dora.dev/capabilities/
+  note: 'DORA capability catalog: trunk-based development, CI, test automation, deployment automation, monitoring & observability, small batches, generative culture and more.'
 mincd:
-  s: MinimumCD
-  u: https://minimumcd.org/
-  'n': 'Minimum Viable CD: the pipeline is the only way to deploy; the pipeline determines releasability; artifacts are immutable; feature work stops when the pipeline is red.'
+  source: MinimumCD
+  href: https://minimumcd.org/
+  note: 'Minimum Viable CD: the pipeline is the only way to deploy; the pipeline determines releasability; artifacts are immutable; feature work stops when the pipeline is red.'
 acd:
-  s: Agentic CD
-  u: https://beyond.minimumcd.org/docs/agentic-cd/
-  'n': 'Agentic Continuous Delivery: an agent-generated change must meet or exceed the same quality bar as a human-generated change. Eight constraints extend MinimumCD for agent-generated work.'
+  source: Agentic CD
+  href: https://beyond.minimumcd.org/docs/agentic-cd/
+  note: 'Agentic Continuous Delivery: an agent-generated change must meet or exceed the same quality bar as a human-generated change. Eight constraints extend MinimumCD for agent-generated work.'
 acdroad:
-  s: ACD roadmap
-  u: https://beyond.minimumcd.org/docs/agentic-cd/getting-started/adoption-roadmap/
-  'n': 'AI adoption roadmap: quality tools, clear requirements and hardened guardrails before accelerating with AI coding.'
+  source: ACD roadmap
+  href: https://beyond.minimumcd.org/docs/agentic-cd/getting-started/adoption-roadmap/
+  note: 'AI adoption roadmap: quality tools, clear requirements and hardened guardrails before accelerating with AI coding.'
 acdrepo:
-  s: ACD repo-readiness
-  u: https://beyond.minimumcd.org/docs/agentic-cd/getting-started/repo-readiness/
-  'n': 'Repository readiness: agents must be able to clone, build, test and iterate without human intervention.'
+  source: ACD repo-readiness
+  href: https://beyond.minimumcd.org/docs/agentic-cd/getting-started/repo-readiness/
+  note: 'Repository readiness: agents must be able to clone, build, test and iterate without human intervention.'
 acdsess:
-  s: ACD sessions
-  u: https://beyond.minimumcd.org/docs/agentic-cd/architecture/small-batch-sessions/
-  'n': Small-batch agent sessions keep context manageable and commits small — one session per scenario.
+  source: ACD sessions
+  href: https://beyond.minimumcd.org/docs/agentic-cd/architecture/small-batch-sessions/
+  note: Small-batch agent sessions keep context manageable and commits small — one session per scenario.
 acdcontract:
-  s: ACD contract
-  u: https://beyond.minimumcd.org/docs/agentic-cd/specification/first-class-artifacts/
-  'n': 'Agent delivery contract: intent, user-facing behaviour, feature constraints and acceptance criteria as versioned first-class artifacts with an authority hierarchy. Humans own accountability.'
+  source: ACD contract
+  href: https://beyond.minimumcd.org/docs/agentic-cd/specification/first-class-artifacts/
+  note: 'Agent delivery contract: intent, user-facing behaviour, feature constraints and acceptance criteria as versioned first-class artifacts with an authority hierarchy. Humans own accountability.'
 acdspec:
-  s: ACD spec
-  u: https://beyond.minimumcd.org/docs/agentic-cd/specification/agent-assisted-specification/
-  'n': 'Agent-assisted specification: human drafts, agent critiques, human decides, agent refines — at every specification stage.'
+  source: ACD spec
+  href: https://beyond.minimumcd.org/docs/agentic-cd/specification/agent-assisted-specification/
+  note: 'Agent-assisted specification: human drafts, agent critiques, human decides, agent refines — at every specification stage.'
 acdenf:
-  s: ACD enforcement
-  u: https://beyond.minimumcd.org/docs/agentic-cd/operations/pipeline-enforcement/
-  'n': 'Pipeline enforcement and expert validation agents: quality gates enforce ACD constraints automatically; expert agents progressively replace interim human review.'
+  source: ACD enforcement
+  href: https://beyond.minimumcd.org/docs/agentic-cd/operations/pipeline-enforcement/
+  note: 'Pipeline enforcement and expert validation agents: quality gates enforce ACD constraints automatically; expert agents progressively replace interim human review.'
 acdeval:
-  s: ACD evals
-  u: https://beyond.minimumcd.org/docs/agentic-cd/evaluation/
-  'n': 'Team and platform AI evals: apply CD practices to prompts, agents, skills and commands; evaluate before rollout.'
+  source: ACD evals
+  href: https://beyond.minimumcd.org/docs/agentic-cd/evaluation/
+  note: 'Team and platform AI evals: apply CD practices to prompts, agents, skills and commands; evaluate before rollout.'
 acdtok:
-  s: ACD tokenomics
-  u: https://beyond.minimumcd.org/docs/agentic-cd/operations/tokenomics/
-  'n': 'Tokenomics: architect agents and code to minimise unnecessary token consumption without sacrificing quality.'
+  source: ACD tokenomics
+  href: https://beyond.minimumcd.org/docs/agentic-cd/operations/tokenomics/
+  note: 'Tokenomics: architect agents and code to minimise unnecessary token consumption without sacrificing quality.'
 acdmet:
-  s: ACD metrics
-  u: https://beyond.minimumcd.org/docs/agentic-cd/operations/pitfalls-and-metrics/
-  'n': Common ACD failure modes and how to measure whether agentic CD is actually working.
+  source: ACD metrics
+  href: https://beyond.minimumcd.org/docs/agentic-cd/operations/pitfalls-and-metrics/
+  note: Common ACD failure modes and how to measure whether agentic CD is actually working.
 harness:
-  s: Harness eng.
-  u: https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html
-  'n': 'Böckeler (martinfowler.com): a harness is a system of guides and sensors — computational and inferential — that raise the probability of good agent output and enable self-correction before issues reach human eyes.'
+  source: Harness eng.
+  href: https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html
+  note: 'Böckeler (martinfowler.com): a harness is a system of guides and sensors — computational and inferential — that raise the probability of good agent output and enable self-correction before issues reach human eyes.'
 devskills:
-  s: Dev skills
-  u: https://martinfowler.com/articles/exploring-gen-ai/13-role-of-developer-skills.html
-  'n': 'Böckeler (martinfowler.com): working with agentic assistants requires constant intervention, correction and steering — review and verification skills matter as much as prompting.'
+  source: Dev skills
+  href: https://martinfowler.com/articles/exploring-gen-ai/13-role-of-developer-skills.html
+  note: 'Böckeler (martinfowler.com): working with agentic assistants requires constant intervention, correction and steering — review and verification skills matter as much as prompting.'
 genai:
-  s: Exploring Gen AI
-  u: https://martinfowler.com/articles/exploring-gen-ai.html
-  'n': 'martinfowler.com''s Exploring Gen AI series: spec-driven development levels, sensors (incl. mutation testing), security context files and secure-by-default harnesses.'
+  source: Exploring Gen AI
+  href: https://martinfowler.com/articles/exploring-gen-ai.html
+  note: 'martinfowler.com''s Exploring Gen AI series: spec-driven development levels, sensors (incl. mutation testing), security context files and secure-by-default harnesses.'
 pyramid:
-  s: Test Pyramid
-  u: https://martinfowler.com/articles/practical-test-pyramid.html
-  'n': 'The Practical Test Pyramid: many fast unit tests, fewer integration tests, few end-to-end tests — fast deterministic feedback.'
+  source: Test Pyramid
+  href: https://martinfowler.com/articles/practical-test-pyramid.html
+  note: 'The Practical Test Pyramid: many fast unit tests, fewer integration tests, few end-to-end tests — fast deterministic feedback.'
 metr:
-  s: METR
-  u: https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
-  'n': 'METR RCT: experienced developers were measured 19% slower with early-2025 AI tools while believing they were ~20% faster. Self-reported productivity is not evidence.'
+  source: METR
+  href: https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
+  note: 'METR RCT: experienced developers were measured 19% slower with early-2025 AI tools while believing they were ~20% faster. Self-reported productivity is not evidence.'
 owasp:
-  s: OWASP LLM
-  u: https://genai.owasp.org/llm-top-10/
-  'n': 'OWASP Top 10 for LLM Applications 2025: prompt injection (LLM01), sensitive information disclosure (LLM02), excessive agency (LLM06), unbounded consumption (LLM10). Enforce critical controls outside the model.'
+  source: OWASP LLM
+  href: https://genai.owasp.org/llm-top-10/
+  note: 'OWASP Top 10 for LLM Applications 2025: prompt injection (LLM01), sensitive information disclosure (LLM02), excessive agency (LLM06), unbounded consumption (LLM10). Enforce critical controls outside the model.'
 trifecta:
-  s: Lethal trifecta
-  u: https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
-  'n': 'Willison: private data + untrusted content + external communication in one agent is the architectural root of prompt-injection exfiltration. Remove or gate at least one leg.'
+  source: Lethal trifecta
+  href: https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
+  note: 'Willison: private data + untrusted content + external communication in one agent is the architectural root of prompt-injection exfiltration. Remove or gate at least one leg.'
 sre:
-  s: Google SRE
-  u: https://sre.google/sre-book/service-level-objectives/
-  'n': 'Google SRE: SLIs/SLOs and error budgets create the objective control loop for pace of change; golden signals — latency, traffic, errors, saturation.'
+  source: Google SRE
+  href: https://sre.google/sre-book/service-level-objectives/
+  note: 'Google SRE: SLIs/SLOs and error budgets create the objective control loop for pace of change; golden signals — latency, traffic, errors, saturation.'
 srebudget:
-  s: SRE budget
-  u: https://sre.google/workbook/error-budget-policy/
-  'n': 'Error budget policy: when the budget is exhausted, releases slow and reliability work takes priority — regardless of who (or what) wrote the change.'
+  source: SRE budget
+  href: https://sre.google/workbook/error-budget-policy/
+  note: 'Error budget policy: when the budget is exhausted, releases slow and reliability work takes priority — regardless of who (or what) wrote the change.'
 accelerate:
-  s: Accelerate
-  u: https://itrevolution.com/product/accelerate/
-  'n': 'Forsgren, Humble & Kim: 24 statistically validated capabilities; speed and stability are not a trade-off; generative culture predicts performance.'
+  source: Accelerate
+  href: https://itrevolution.com/product/accelerate/
+  note: 'Forsgren, Humble & Kim: 24 statistically validated capabilities; speed and stability are not a trade-off; generative culture predicts performance.'
 tbd:
-  s: Trunk-based dev
-  u: https://trunkbaseddevelopment.com/
-  'n': Short-lived branches integrating to trunk at least daily — a core practice of high performers and DORA's strong-version-control capability.
+  source: Trunk-based dev
+  href: https://trunkbaseddevelopment.com/
+  note: Short-lived branches integrating to trunk at least daily — a core practice of high performers and DORA's strong-version-control capability.
 claude:
-  s: Claude Code BP
-  u: https://www.anthropic.com/engineering/claude-code-best-practices
-  'n': 'Anthropic engineering: curate context files, use permission allowlists, and sandbox agent command execution; give agents safe, scriptable feedback loops.'
+  source: Claude Code BP
+  href: https://www.anthropic.com/engineering/claude-code-best-practices
+  note: 'Anthropic engineering: curate context files, use permission allowlists, and sandbox agent command execution; give agents safe, scriptable feedback loops.'
 review:
-  s: Review capacity
-  u: https://arxiv.org/abs/2607.01904
-  'n': 'Longitudinal enterprise study: AI generates change faster than humans can review it — review capacity, not generation, becomes the binding constraint.'
+  source: Review capacity
+  href: https://arxiv.org/abs/2607.01904
+  note: 'Longitudinal enterprise study: AI generates change faster than humans can review it — review capacity, not generation, becomes the binding constraint.'
 so25:
-  s: Stack Overflow ’25
-  u: https://survey.stackoverflow.co/2025/ai
-  'n': 'Stack Overflow Developer Survey 2025: 84% of developers use or plan to use AI tools, while trust in output accuracy remains a live concern.'
+  source: Stack Overflow ’25
+  href: https://survey.stackoverflow.co/2025/ai
+  note: 'Stack Overflow Developer Survey 2025: 84% of developers use or plan to use AI tools, while trust in output accuracy remains a live concern.'
