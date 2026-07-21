@@ -1,6 +1,13 @@
 import React from "react";
+import type { Dimension, Score } from "../types/domain";
 
-export default function MatrixTable({ dimensions, levelNames, scores }) {
+interface MatrixTableProps {
+  dimensions: Dimension[];
+  levelNames: string[];
+  scores: Score[];
+}
+
+export default function MatrixTable({ dimensions, levelNames, scores }: MatrixTableProps) {
   return (
     <table className="matrix">
       <thead>

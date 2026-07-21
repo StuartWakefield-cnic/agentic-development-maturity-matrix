@@ -1,6 +1,7 @@
 import React from "react";
+import type { RailProps } from "../../types/domain";
 
-export default function TimelineRail({ dim, levelNames, score, checked }) {
+export default function TimelineRail({ dim, levelNames, score }: RailProps) {
   return (
     <nav className="rail-timeline dim-rail" aria-label={`${dim.name} level index`}>
       {[0, 1, 2, 3].map((l) => {

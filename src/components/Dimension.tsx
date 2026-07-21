@@ -3,8 +3,29 @@ import CriterionItem from "./CriterionItem";
 import { itemId } from "../utils/scoring";
 import { PROGRESS_VARIANTS } from "./progress";
 import { useProgressVariant } from "../context/ProgressVariantContext";
+import type { Dimension as DimensionType, Citations, Checked, Score } from "../types/domain";
 
-export default function Dimension({ dim, levelNames, citations, checked, onToggle, score, isOpen, onToggleOpen }) {
+interface DimensionProps {
+  dim: DimensionType;
+  levelNames: string[];
+  citations: Citations;
+  checked: Checked;
+  onToggle: (id: string, isChecked: boolean) => void;
+  score: Score;
+  isOpen: boolean;
+  onToggleOpen: (id: string) => void;
+}
+
+export default function Dimension({
+  dim,
+  levelNames,
+  citations,
+  checked,
+  onToggle,
+  score,
+  isOpen,
+  onToggleOpen,
+}: DimensionProps) {
   const { variant } = useProgressVariant();
   const active = PROGRESS_VARIANTS.find((v) => v.key === variant) || PROGRESS_VARIANTS[0];
   const RailComponent = active.Component;

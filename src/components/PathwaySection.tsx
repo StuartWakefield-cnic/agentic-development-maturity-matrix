@@ -4,8 +4,16 @@ import Container from "./ui/Container";
 import SectionHeading from "./ui/SectionHeading";
 import Card from "./ui/Card";
 import Badge from "./ui/Badge";
+import type { Dimension, Score, Checked } from "../types/domain";
 
-export default function PathwaySection({ dimensions, levelNames, scores, checked }) {
+interface PathwaySectionProps {
+  dimensions: Dimension[];
+  levelNames: string[];
+  scores: Score[];
+  checked: Checked;
+}
+
+export default function PathwaySection({ dimensions, levelNames, scores, checked }: PathwaySectionProps) {
   const ranked = dimensions
     .map((d, i) => ({ d, sc: scores[i] }))
     .filter((x) => x.sc.attained < 4)

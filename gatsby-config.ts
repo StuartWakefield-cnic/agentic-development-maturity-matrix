@@ -1,4 +1,6 @@
-module.exports = {
+import type { GatsbyConfig } from "gatsby";
+
+const config: GatsbyConfig = {
   pathPrefix: "/agentic-development-maturity-matrix",
   siteMetadata: {
     title: "Agentic Development Maturity Matrix",
@@ -8,3 +10,5 @@ module.exports = {
   },
   plugins: [],
 };
+
+export default config;

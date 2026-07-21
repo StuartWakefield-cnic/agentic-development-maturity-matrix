@@ -1,9 +1,10 @@
 import React from "react";
 import { blockingItems } from "../../utils/scoring";
+import type { RailProps } from "../../types/domain";
 
 const MAX_CHIPS = 3;
 
-export default function StepperRail({ dim, levelNames, score, checked }) {
+export default function StepperRail({ dim, levelNames, score, checked }: RailProps) {
   const blockers = score.attained < 4 ? blockingItems(dim, score, checked) : [];
 
   return (

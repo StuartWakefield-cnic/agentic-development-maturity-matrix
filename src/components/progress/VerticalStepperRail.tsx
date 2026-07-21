@@ -1,6 +1,7 @@
 import React from "react";
+import type { RailProps } from "../../types/domain";
 
-export default function VerticalStepperRail({ dim, levelNames, score, checked }) {
+export default function VerticalStepperRail({ levelNames, score }: RailProps) {
   return (
     <div className="rail-vstepper dim-rail">
       <div className="vstepper-col">

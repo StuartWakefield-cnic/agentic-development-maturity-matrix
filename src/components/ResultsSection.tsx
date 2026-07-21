@@ -4,8 +4,17 @@ import MatrixTable from "./MatrixTable";
 import Container from "./ui/Container";
 import SectionHeading from "./ui/SectionHeading";
 import Card from "./ui/Card";
+import type { Dimension, Score } from "../types/domain";
 
-export default function ResultsSection({ dimensions, levelNames, scores, overall, attainedMin }) {
+interface ResultsSectionProps {
+  dimensions: Dimension[];
+  levelNames: string[];
+  scores: Score[];
+  overall: number;
+  attainedMin: number;
+}
+
+export default function ResultsSection({ dimensions, levelNames, scores, overall, attainedMin }: ResultsSectionProps) {
   const overallNote =
     attainedMin > 0
       ? `${levelNames[attainedMin - 1]} attained in every dimension`

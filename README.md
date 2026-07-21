@@ -2,14 +2,15 @@
 
 An [interactive Agentic Development Maturity Matrix][view] to be used for team self assessment.
 
-Built with [Gatsby](https://www.gatsbyjs.com/). The dimensions, criteria and citations live in
-[`src/data/*.yaml`](./src/data) and can be hand-edited without touching any JavaScript or React code.
+Built with [Gatsby](https://www.gatsbyjs.com/) and TypeScript. The dimensions, criteria and citations live in
+[`src/data/*.yaml`](./src/data) and can be hand-edited without touching any code.
 
 ## Development
 
 ```
 npm install
 npm run develop   # http://localhost:8000
+npm run typecheck # tsc --noEmit
 ```
 
 ## Build

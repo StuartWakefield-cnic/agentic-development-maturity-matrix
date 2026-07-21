@@ -1,15 +1,20 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, type ReactNode } from "react";
 import { DEFAULT_VARIANT } from "../components/progress";
 
 const STORAGE_KEY = "adm-progress-variant";
 const isDev = process.env.NODE_ENV === "development";
 
-const ProgressVariantContext = createContext({
+interface ProgressVariantContextValue {
+  variant: string;
+  setVariant: (variant: string) => void;
+}
+
+const ProgressVariantContext = createContext<ProgressVariantContextValue>({
   variant: DEFAULT_VARIANT,
   setVariant: () => {},
 });
 
-export function ProgressVariantProvider({ children }) {
+export function ProgressVariantProvider({ children }: { children: ReactNode }) {
   const [variant, setVariant] = useState(DEFAULT_VARIANT);
 
   useEffect(() => {

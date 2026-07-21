@@ -1,12 +1,18 @@
 import React from "react";
+import type { Dimension, Score } from "../types/domain";
 
-export default function Radar({ dimensions, scores }) {
+interface RadarProps {
+  dimensions: Dimension[];
+  scores: Score[];
+}
+
+export default function Radar({ dimensions, scores }: RadarProps) {
   const size = 340;
   const cx = size / 2;
   const cy = size / 2;
   const R = 118;
   const n = dimensions.length;
-  const pt = (i, v) => {
+  const pt = (i: number, v: number): [number, number] => {
     const a = -Math.PI / 2 + (i * 2 * Math.PI) / n;
     const r = (R * v) / 4;
     return [cx + r * Math.cos(a), cy + r * Math.sin(a)];

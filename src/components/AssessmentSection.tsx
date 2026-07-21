@@ -4,6 +4,18 @@ import { buildMarkdownSummary } from "../utils/scoring";
 import Container from "./ui/Container";
 import SectionHeading from "./ui/SectionHeading";
 import Button from "./ui/Button";
+import type { Dimension as DimensionType, Citations, Checked, Score, Summary } from "../types/domain";
+
+interface AssessmentSectionProps {
+  dimensions: DimensionType[];
+  levelNames: string[];
+  citations: Citations;
+  checked: Checked;
+  toggleItem: (id: string, isChecked: boolean) => void;
+  scores: Score[];
+  resetAll: () => void;
+  summaryData: () => Summary;
+}
 
 export default function AssessmentSection({
   dimensions,
@@ -14,11 +26,11 @@ export default function AssessmentSection({
   scores,
   resetAll,
   summaryData,
-}) {
+}: AssessmentSectionProps) {
   const [openDims, setOpenDims] = useState(() => new Set(dimensions[0] ? [dimensions[0].id] : []));
   const [copied, setCopied] = useState(false);
 
-  const toggleOpen = useCallback((id) => {
+  const toggleOpen = useCallback((id: string) => {
     setOpenDims((prev) => {
       const next = new Set(prev);
       if (next.has(id)) next.delete(id);

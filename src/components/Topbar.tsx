@@ -35,7 +35,12 @@ function DemoSwitcher() {
   );
 }
 
-export default function Topbar({ overall, attainedMin }) {
+interface TopbarProps {
+  overall: number;
+  attainedMin: number;
+}
+
+export default function Topbar({ overall, attainedMin }: TopbarProps) {
   return (
     <div className="topbar">
       <Container className="topbar-in">

@@ -1,14 +1,15 @@
 import React from "react";
 import { blockingItems } from "../../utils/scoring";
+import type { RailProps } from "../../types/domain";
 
-const MAX_CHIPS = 4;
+const MAX_CHIPS = 3;
 
-export default function LadderRail({ dim, levelNames, score, checked }) {
+export default function MeterRail({ dim, levelNames, score, checked }: RailProps) {
   const blockers = score.attained < 4 ? blockingItems(dim, score, checked) : [];
 
   return (
-    <div className="rail-ladder dim-rail">
-      <div className="ladder-row">
+    <div className="rail-meter dim-rail">
+      <div className="meter-track">
         {[0, 1, 2, 3].map((l) => {
           const p = score.per[l];
           const frac = p.total ? Math.min(1, p.done / p.total) : 0;
@@ -16,14 +17,21 @@ export default function LadderRail({ dim, levelNames, score, checked }) {
           const isCurrent = !isDone && l === score.attained;
           const state = isDone ? "done" : isCurrent ? "current" : "future";
           return (
-            <div className={`ladder-box ladder-${state}`} key={l}>
-              <span className="ladder-badge">{isDone ? "✓" : `${p.done}/${p.total}`}</span>
-              {!isDone && <div className="ladder-empty" />}
-              {!isDone && <div className="ladder-fill" style={{ width: `${Math.round(frac * 100)}%` }} />}
-              <div className="ladder-footer">
-                <span className={`lvl-chip l${l + 1}`}>L{l + 1}</span>
-                <span className="ladder-name">{levelNames[l]}</span>
-              </div>
+            <div className={`meter-seg meter-${state}`} key={l}>
+              <div className="meter-seg-fill" style={{ width: `${Math.round(frac * 100)}%` }} />
+            </div>
+          );
+        })}
+      </div>
+      <div className="meter-labels">
+        {[0, 1, 2, 3].map((l) => {
+          const isDone = l < score.attained;
+          const isCurrent = !isDone && l === score.attained;
+          const state = isDone ? "done" : isCurrent ? "current" : "future";
+          return (
+            <div className={`meter-lab meter-lab-${state}`} key={l}>
+              <span className="meter-lvl">L{l + 1}</span>
+              <span className="meter-name">{levelNames[l]}</span>
             </div>
           );
         })}

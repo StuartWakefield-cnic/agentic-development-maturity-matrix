@@ -1,6 +1,8 @@
-export const itemId = (dimId, level, index) => `${dimId}-${level}-${index}`;
+import type { Dimension, Checked, Score, BlockingItem, Summary } from "../types/domain";
 
-export function dimScore(dim, checked) {
+export const itemId = (dimId: string, level: number, index: number): string => `${dimId}-${level}-${index}`;
+
+export function dimScore(dim: Dimension, checked: Checked): Score {
   const per = dim.levels.map((items, li) => {
     const done = items.filter((_, ii) => checked[itemId(dim.id, li, ii)]).length;
     return { done, total: items.length };
@@ -18,7 +20,7 @@ export function dimScore(dim, checked) {
   return { per, attained, partial, value: attained + partial * 0.999 };
 }
 
-export function blockingItems(dim, score, checked) {
+export function blockingItems(dim: Dimension, score: Score, checked: Checked): BlockingItem[] {
   const nl = score.attained;
   if (nl >= dim.levels.length) return [];
   return dim.levels[nl]
@@ -26,7 +28,12 @@ export function blockingItems(dim, score, checked) {
     .filter((it) => !checked[itemId(dim.id, nl, it.ii)]);
 }
 
-export function buildSummary(dimensions, levelNames, scores, checked) {
+export function buildSummary(
+  dimensions: Dimension[],
+  levelNames: string[],
+  scores: Score[],
+  checked: Checked
+): Summary {
   return {
     tool: "Agentic Development Maturity Matrix",
     date: new Date().toISOString().slice(0, 10),
@@ -46,7 +53,7 @@ export function buildSummary(dimensions, levelNames, scores, checked) {
   };
 }
 
-export function buildMarkdownSummary(summary) {
+export function buildMarkdownSummary(summary: Summary): string {
   let md = `# Agentic Development Maturity — ${summary.date}\n\n**Overall: ${summary.overall.toFixed(
     1
   )} / 4.0**\n\n| Dimension | Level | L1 | L2 | L3 | L4 |\n|---|---|---|---|---|---|\n`;

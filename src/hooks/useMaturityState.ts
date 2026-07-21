@@ -3,11 +3,12 @@ import dimensions from "../data/dimensions.yaml";
 import citations from "../data/citations.yaml";
 import levelNames from "../data/levels.yaml";
 import { dimScore, buildSummary } from "../utils/scoring";
+import type { Checked } from "../types/domain";
 
 const STORAGE_KEY = "adm-matrix-v1";
 
 export default function useMaturityState() {
-  const [checked, setChecked] = useState({});
+  const [checked, setChecked] = useState<Checked>({});
 
   useEffect(() => {
     try {
@@ -22,7 +23,7 @@ export default function useMaturityState() {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(checked));
   }, [checked]);
 
-  const toggleItem = useCallback((id, isChecked) => {
+  const toggleItem = useCallback((id: string, isChecked: boolean) => {
     setChecked((prev) => {
       const next = { ...prev };
       if (isChecked) next[id] = true;

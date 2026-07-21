@@ -1,6 +1,7 @@
 import React from "react";
+import type { Citation, Citations, Criterion } from "../types/domain";
 
-function CiteChip({ citation }) {
+function CiteChip({ citation }: { citation: Citation }) {
   return (
     <a className="cite" href={citation.href} target="_blank" rel="noopener noreferrer" tabIndex={0}>
       {citation.source}
@@ -11,7 +12,15 @@ function CiteChip({ citation }) {
   );
 }
 
-export default function CriterionItem({ id, item, citations, checked, onToggle }) {
+interface CriterionItemProps {
+  id: string;
+  item: Criterion;
+  citations: Citations;
+  checked: boolean;
+  onToggle: (id: string, isChecked: boolean) => void;
+}
+
+export default function CriterionItem({ id, item, citations, checked, onToggle }: CriterionItemProps) {
   return (
     <div className="crit">
       <input
