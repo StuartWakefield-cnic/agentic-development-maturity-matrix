@@ -132,7 +132,7 @@ table.model td{color:var(--ink-soft)}
 .chev{flex:none;transition:transform .18s;color:var(--ink-faint)}
 .dim.open .chev{transform:rotate(90deg)}
 .dim-body{display:none;border-top:1px solid var(--line)}
-.dim.open .dim-body.rail-sidebar{display:grid;grid-template-columns:150px 1fr}
+.dim.open .dim-body.rail-sidebar{display:grid;grid-template-columns:180px 1fr}
 .dim.open .dim-body.rail-sidebar-wide{display:grid;grid-template-columns:230px 1fr}
 .dim.open .dim-body.rail-stacked{display:block}
 @media(max-width:640px){.dim.open .dim-body{display:block}.dim-rail{display:none!important}}
