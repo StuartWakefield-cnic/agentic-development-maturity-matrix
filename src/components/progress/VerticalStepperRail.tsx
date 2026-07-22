@@ -1,5 +1,6 @@
 import React from "react";
 import type { RailProps } from "../../types/domain";
+import AchievementWreath from "../icons/AchievementWreath";
 
 export default function VerticalStepperRail({ levelNames, score }: RailProps) {
   return (
@@ -30,7 +31,12 @@ export default function VerticalStepperRail({ levelNames, score }: RailProps) {
           );
         })}
       </div>
-      {score.attained === 4 && <div className="rail-complete">Elite — every gate complete</div>}
+      {score.attained === 4 && (
+        <div className="rail-complete">
+          <AchievementWreath className="wreath-icon" />
+          <span>Elite — every gate complete</span>
+        </div>
+      )}
     </div>
   );
 }

@@ -128,7 +128,7 @@ table.model td{color:var(--ink-soft)}
 .dim-glyph{font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--blue);border:1px solid var(--blue-soft);background:var(--blue-soft);border-radius:6px;padding:3px 7px;flex:none}
 .dim-title{font-family:var(--disp);font-weight:600;font-size:1.05rem;flex:1}
 .dim-title small{display:block;font-family:var(--sans);font-weight:400;font-size:.78rem;color:var(--ink-faint);margin-top:1px}
-.dim-state{font-family:var(--sans);font-weight:600;font-size:.78rem;color:var(--ink-soft);white-space:nowrap}
+.dim-state{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-weight:600;font-size:.78rem;color:var(--ink-soft);white-space:nowrap}
 .chev{flex:none;transition:transform .18s;color:var(--ink-faint)}
 .dim.open .chev{transform:rotate(90deg)}
 .dim-body{display:none;border-top:1px solid var(--line)}
@@ -166,7 +166,8 @@ table.model td{color:var(--ink-soft)}
 .blocker-chip{font-family:var(--sans);font-size:.72rem;color:var(--ink-soft);background:var(--danger-soft);border-radius:6px;padding:3px 9px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .blocker-chip-more{background:var(--surface);color:var(--ink-faint)}
 .rail-blockers-compact{justify-content:center;text-align:center}
-.rail-complete{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line-strong);font-family:var(--sans);font-size:.74rem;font-weight:600;color:var(--blue);text-align:center}
+.rail-complete{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line-strong);font-family:var(--sans);font-size:.74rem;font-weight:600;color:var(--blue);text-align:center}
+.wreath-icon{flex:none;width:48px;height:48px;color:var(--blue)}
 
 /* ---------- progress variant: stepper ---------- */
 .rail-stepper{padding:18px 18px 14px;background:var(--surface);border-bottom:1px solid var(--line)}

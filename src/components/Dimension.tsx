@@ -3,6 +3,7 @@ import CriterionItem from "./CriterionItem";
 import { itemId } from "../utils/scoring";
 import type { Dimension as DimensionType, Citations, Checked, Score } from "../types/domain";
 import VerticalStepperRail from "./progress/VerticalStepperRail";
+import AchievementWreath from "./icons/AchievementWreath";
 
 interface DimensionProps {
   dim: DimensionType;
@@ -40,6 +41,7 @@ export default function Dimension({
           <small>{dim.small}</small>
         </span>
         <span className="dim-state">
+          {score.attained === 4 && <AchievementWreath className="wreath-icon" />}
           <span className={`lvl-chip l${score.attained}`}>L{score.attained}</span> · {Math.round((done / total) * 100)}%
         </span>
         <svg className="chev" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
