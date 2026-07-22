@@ -1,6 +1,7 @@
 import React from "react";
 import useMaturityState from "../hooks/useMaturityState";
 import Topbar from "../components/Topbar";
+import SummaryBar from "../components/SummaryBar";
 import Hero from "../components/Hero";
 import ModelSection from "../components/ModelSection";
 import AssessmentSection from "../components/AssessmentSection";
@@ -49,6 +50,7 @@ export default function IndexPage() {
       <PathwaySection dimensions={dimensions} levelNames={levelNames} scores={scores} checked={checked} />
       <SourcesSection />
       <Footer />
+      <SummaryBar dimensions={dimensions} scores={scores} overall={overall} />
     </>
   );
 }
