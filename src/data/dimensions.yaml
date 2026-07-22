@@ -62,7 +62,7 @@
   name: Product approach & specification
   small: Intent, user-centricity and the specs that anchor agent work
   levels:
-    - - title: Every change starts from explicit, human-owned intent — a problem statement or hypothesis exists before any agent touches code.
+    - - title: A problem statement or hypothesis exists before any agent touches code.
         citation:
           - acd
           - acdcontract
